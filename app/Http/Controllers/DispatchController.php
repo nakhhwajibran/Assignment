@@ -56,7 +56,7 @@ class DispatchController extends Controller
         $shipment_no = $request->shipment_no;
         $source = $request->source;
         $destination = $request->destination;
-        $vehicle = $request->vehicle;
+        $vehicle = $request->vehicle_no;
         $driver = $request->driver;
         $transporter = $request->transporter;
         $startDate = $request->start_date;

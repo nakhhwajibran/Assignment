@@ -53,7 +53,7 @@ class DriverController extends Controller
         $userId = auth()->user()->id;
         $data = $request->only('name', 'phone', 'address');
         $validator = Validator::make($data, [
-            'name' => 'required|string|between:5,50',
+            'name' => 'required|string|between:5,50|regex:/^([^0-9]*)$/',
             'phone' => 'required|integer|check_phone',
             'address' => 'required|string',
         ]);

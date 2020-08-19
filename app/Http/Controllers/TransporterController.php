@@ -51,7 +51,7 @@ class TransporterController extends Controller
         $data = $request->only('name');
 
         $validator = Validator::make($data, [
-            'name' => 'required|string|between:5,50',
+            'name' => 'required|string|between:5,50|regex:/^([^0-9]*)$/',
         ]);
 
         if ($validator->fails()) {
@@ -80,7 +80,7 @@ class TransporterController extends Controller
         $userId = auth()->user()->id;
         $data = $request->only('name');
         $validator = Validator::make($data, [
-            'name' => 'required|string',
+            'name' => 'required|string|regex:/^([^0-9]*)$/',
         ]);
 
         if ($validator->fails()) {

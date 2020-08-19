@@ -52,9 +52,9 @@ class SourceController extends Controller
         $userId = auth()->user()->id;
         $data = $request->only('city', 'state', 'country');
         $validator = Validator::make($data, [
-            'city' => 'required|string',
-            'state' => 'required|string',
-            'country' => 'required|string'
+            'city' => 'required|string|regex:/^([^0-9]*)$/',
+            'state' => 'required|string|regex:/^([^0-9]*)$/',
+            'country' => 'required|string|regex:/^([^0-9]*)$/'
         ]);
 
         if ($validator->fails()) {
@@ -83,9 +83,9 @@ class SourceController extends Controller
         $userId = auth()->user()->id;
         $data = $request->only('city', 'state', 'country');
         $validator = Validator::make($data, [
-            'city' => 'required|string',
-            'state' => 'required|string',
-            'country' => 'required|string'
+            'city' => 'required|string|regex:/^([^0-9]*)$/',
+            'state' => 'required|string|regex:/^([^0-9]*)$/',
+            'country' => 'required|string|regex:/^([^0-9]*)$/'
         ]);
 
         if ($validator->fails()) {
